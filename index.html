@@ -1,1 +1,281 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Construcció de Catapultes amb LEGO</title>
 
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:#f4f7fb;
+      color:#222;
+      line-height:1.6;
+    }
+
+    header{
+      background:linear-gradient(135deg,#0f172a,#1e3a8a);
+      color:white;
+      padding:60px 20px;
+      text-align:center;
+    }
+
+    header h1{
+      margin:0;
+      font-size:3rem;
+    }
+
+    header p{
+      font-size:1.2rem;
+      margin-top:10px;
+    }
+
+    nav{
+      background:#111827;
+      padding:10px;
+      text-align:center;
+      position:sticky;
+      top:0;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin:0 15px;
+      font-weight:bold;
+    }
+
+    nav a:hover{
+      color:#60a5fa;
+    }
+
+    section{
+      max-width:1000px;
+      margin:auto;
+      padding:50px 20px;
+    }
+
+    h2{
+      color:#1e3a8a;
+      margin-bottom:20px;
+      border-left:8px solid #3b82f6;
+      padding-left:15px;
+    }
+
+    .card{
+      background:white;
+      border-radius:12px;
+      padding:25px;
+      margin-bottom:25px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    ul{
+      padding-left:20px;
+    }
+
+    .challenge{
+      background:#dbeafe;
+      border-left:6px solid #2563eb;
+      padding:20px;
+      border-radius:10px;
+      margin-top:20px;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+      margin-top:20px;
+    }
+
+    .step{
+      background:white;
+      border-radius:12px;
+      padding:20px;
+      box-shadow:0 3px 8px rgba(0,0,0,0.08);
+    }
+
+    .step h3{
+      margin-top:0;
+      color:#2563eb;
+    }
+
+    footer{
+      background:#0f172a;
+      color:white;
+      text-align:center;
+      padding:30px 20px;
+      margin-top:40px;
+    }
+
+    .highlight{
+      color:#2563eb;
+      font-weight:bold;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Construcció de Catapultes amb LEGO</h1>
+  <p>Taller STEAM · Tecnologia · Cicle Mitjà</p>
+</header>
+
+<nav>
+  <a href="#repte">Repte</a>
+  <a href="#proces">Procés Tecnològic</a>
+  <a href="#materials">Materials</a>
+  <a href="#fases">Fases</a>
+  <a href="#final">Repte Final</a>
+</nav>
+
+<section id="repte">
+  <h2>El Repte</h2>
+
+  <div class="card">
+    <p>
+      Sou equips d’enginyeria i haureu de construir una 
+      <span class="highlight">catapulta amb LEGO</span> 
+      capaç de llençar un projectil el més lluny possible.
+    </p>
+
+    <div class="challenge">
+      <strong>Objectiu:</strong><br>
+      Dissenyar, construir, provar i millorar una catapulta funcional.
+    </div>
+  </div>
+</section>
+
+<section id="proces">
+  <h2>El Procés Tecnològic</h2>
+
+  <div class="steps">
+
+    <div class="step">
+      <h3>1. Pensem</h3>
+      <p>
+        Parleu en equip i decidiu com serà la vostra catapulta.
+      </p>
+    </div>
+
+    <div class="step">
+      <h3>2. Construïm</h3>
+      <p>
+        Creeu el primer prototip amb peces LEGO.
+      </p>
+    </div>
+
+    <div class="step">
+      <h3>3. Provem</h3>
+      <p>
+        Feu llançaments i observeu què funciona.
+      </p>
+    </div>
+
+    <div class="step">
+      <h3>4. Millorem</h3>
+      <p>
+        Modifiqueu el disseny per aconseguir més distància.
+      </p>
+    </div>
+
+    <div class="step">
+      <h3>5. Presentem</h3>
+      <p>
+        Expliqueu què heu après i com heu millorat el vostre prototip.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="materials">
+  <h2>Materials</h2>
+
+  <div class="card">
+    <ul>
+      <li>Peces LEGO variades</li>
+      <li>Gomes elàstiques</li>
+      <li>Eixos i connectors</li>
+      <li>Projectils lleugers</li>
+      <li>Cinta mètrica</li>
+      <li>Dianes o zones de caiguda</li>
+    </ul>
+  </div>
+</section>
+
+<section id="fases">
+  <h2>Fases del Taller</h2>
+
+  <div class="card">
+    <h3>1. Disseny</h3>
+    <p>
+      Penseu com fareu una estructura estable i un bon mecanisme de llançament.
+    </p>
+
+    <h3>2. Construcció</h3>
+    <p>
+      Construïu la primera versió de la catapulta.
+    </p>
+
+    <h3>3. Experimentació</h3>
+    <p>
+      Feu proves i observeu:
+    </p>
+
+    <ul>
+      <li>Arriba lluny?</li>
+      <li>És estable?</li>
+      <li>El braç es mou bé?</li>
+      <li>Quina força té?</li>
+    </ul>
+
+    <h3>4. Millora</h3>
+    <p>
+      Modifiqueu:
+    </p>
+
+    <ul>
+      <li>la llargada del braç,</li>
+      <li>la tensió de les gomes,</li>
+      <li>la base,</li>
+      <li>la forma del mecanisme.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="final">
+  <h2>Repte Final</h2>
+
+  <div class="card">
+    <p>
+      Cada equip tindrà <strong>3 llançaments finals</strong>.
+    </p>
+
+    <div class="challenge">
+      <strong>Guanya la catapulta que aconsegueixi més distància.</strong>
+    </div>
+
+    <h3>Després del repte...</h3>
+
+    <p>Cada equip explicarà:</p>
+
+    <ul>
+      <li>Quin problema han tingut</li>
+      <li>Quina millora han fet</li>
+      <li>Què ha funcionat millor</li>
+      <li>Què canviarien si tinguessin més temps</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>Setmana STEAM · Tecnologia · Construcció de Catapultes amb LEGO</p>
+</footer>
+
+</body>
+</html>
