@@ -1,1 +1,238 @@
+/* ------------------------------
+   ESTILS GENERALS
+-------------------------------- */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f7fb;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+/* ------------------------------
+   CAPÇALERA
+-------------------------------- */
+
+header{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    color:white;
+    padding:80px 20px;
+    text-align:center;
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+header p{
+    font-size:1.3rem;
+    opacity:0.95;
+}
+
+/* ------------------------------
+   MENÚ
+-------------------------------- */
+
+nav{
+    background:#111827;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 18px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#60a5fa;
+}
+
+/* ------------------------------
+   SECCIONS
+-------------------------------- */
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+h2{
+    color:#1e3a8a;
+    margin-bottom:25px;
+    padding-left:15px;
+    border-left:8px solid #3b82f6;
+    font-size:2rem;
+}
+
+h3{
+    color:#2563eb;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+p{
+    margin-bottom:18px;
+}
+
+/* ------------------------------
+   TARGETES
+-------------------------------- */
+
+.card{
+    background:white;
+    border-radius:16px;
+    padding:30px;
+    margin-bottom:30px;
+    box-shadow:0 5px 14px rgba(0,0,0,0.08);
+}
+
+/* ------------------------------
+   LLISTES
+-------------------------------- */
+
+ul{
+    padding-left:25px;
+    margin-bottom:20px;
+}
+
+li{
+    margin-bottom:10px;
+}
+
+/* ------------------------------
+   REPTE DESTACAT
+-------------------------------- */
+
+.challenge{
+    background:#dbeafe;
+    border-left:8px solid #2563eb;
+    padding:22px;
+    border-radius:12px;
+    margin-top:25px;
+    font-size:1.05rem;
+}
+
+/* ------------------------------
+   PARAULES DESTACADES
+-------------------------------- */
+
+.highlight{
+    color:#2563eb;
+    font-weight:bold;
+}
+
+/* ------------------------------
+   PASSOS DEL PROCÉS
+-------------------------------- */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.step{
+    background:white;
+    border-radius:14px;
+    padding:25px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    transition:transform 0.2s ease;
+}
+
+.step:hover{
+    transform:translateY(-5px);
+}
+
+.step h3{
+    margin-top:0;
+    color:#1d4ed8;
+}
+
+/* ------------------------------
+   CAIXES DE TEMPS
+-------------------------------- */
+
+.time-box{
+    background:#eff6ff;
+    border:2px solid #93c5fd;
+    border-radius:12px;
+    padding:18px;
+    margin:15px 0;
+}
+
+/* ------------------------------
+   BOTONS
+-------------------------------- */
+
+.button{
+    display:inline-block;
+    background:#2563eb;
+    color:white;
+    padding:12px 22px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.button:hover{
+    background:#1d4ed8;
+}
+
+/* ------------------------------
+   PEU DE PÀGINA
+-------------------------------- */
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    margin-top:60px;
+}
+
+footer p{
+    margin:0;
+    opacity:0.9;
+}
+
+/* ------------------------------
+   RESPONSIVE
+-------------------------------- */
+
+@media (max-width:768px){
+
+    header h1{
+        font-size:2.2rem;
+    }
+
+    nav a{
+        display:inline-block;
+        margin:8px;
+    }
+
+    h2{
+        font-size:1.6rem;
+    }
+
+    .card{
+        padding:22px;
+    }
+}
