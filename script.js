@@ -1,5 +1,5 @@
 const STORAGE_KEY = "catapultes-lego-work-v1";
-
+const API_URL = "https://script.google.com/macros/s/AKfycbwG2wupymaVszT_CmqMHEsqCUPF3C3F-kuZoZdyOCjoZYiVnU6z4ZeU2BDnZgLB88YFIQ/exec";
 const hypothesesCatalog = [
   {
     id: "arm_length",
@@ -136,8 +136,14 @@ function generateWorkId() {
 }
 
 function saveState() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-  document.getElementById("saveStatus").textContent = `Desat · ${state.workId || "treball nou"}`;
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(state)
+  );
+
+  saveToCloud();
+
 }
 
 function loadState() {
@@ -682,3 +688,39 @@ function initialise() {
 }
 
 document.addEventListener("DOMContentLoaded", initialise);
+
+async function saveToCloud() {
+
+  if (!API_URL || API_URL.includes("ENGANXA")) {
+    return;
+  }
+
+  try {
+
+    const response = await fetch(API_URL, {
+      method: "POST",
+      body: JSON.stringify({
+        action: "save",
+        work: state
+      })
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+
+      document.getElementById("saveStatus").textContent =
+        "✓ Desat al núvol";
+
+    }
+
+  } catch (error) {
+
+    console.error("Error desant:", error);
+
+    document.getElementById("saveStatus").textContent =
+      "⚠ Error de connexió";
+
+  }
+
+}
