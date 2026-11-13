@@ -3,307 +3,359 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Construcció de Catapultes amb LEGO</title>
+  <title>Construïm catapultes amb LEGO</title>
   <link rel="stylesheet" href="style.css">
- 
 </head>
-
 <body>
-
-<header>
-  <h1>Construcció de Catapultes amb LEGO</h1>
-  <p>Taller STEAM · Tecnologia · Cicle Mitjà</p>
-</header>
-
-<nav>
-  <a href="#repte">Repte</a>
-  <a href="#proces">Procés Tecnològic</a>
-  <a href="#materials">Materials</a>
-  <a href="#fases">Fases</a>
-  <a href="#final">Repte Final</a>
-</nav>
-<section id="reptes">
-  
-  <h2>Dos Reptes Diferenciats</h2>
-
-  <div class="card">
-
-    <p>
-  Durant el taller, els equips hauran de convertir-se en enginyers i enginyeres per dissenyar, construir i millorar una catapulta funcional amb peces LEGO.
-</p>
-
-<p>
-  El repte no consistirà només en construir una estructura, sinó en seguir tot el procés tecnològic:
-</p>
-
-<ul>
-  <li>Pensar possibles solucions abans de començar.</li>
-  <li>Construir un primer prototip funcional.</li>
-  <li>Fer proves reals de llançament.</li>
-  <li>Detectar problemes i punts de millora.</li>
-  <li>Modificar i optimitzar la catapulta.</li>
-  <li>Presentar el resultat final i explicar les decisions preses.</li>
-</ul>
-
-<p>
-  Cada equip haurà d’experimentar amb diferents mecanismes, estructures i sistemes de llançament per aconseguir superar el repte proposat.
-</p>
-
-<p>
-  Segons el nivell educatiu, el repte tindrà objectius diferents: aconseguir la màxima distància o aconseguir la màxima precisió.
-</p>
-
-  </div>
-```html id="j7x4pm"
-<p>
-  Durant el taller, els equips hauran de convertir-se en enginyers i enginyeres per dissenyar, construir i millorar una catapulta funcional amb peces LEGO.
-</p>
-
-<p>
-  El repte no consistirà només en construir una estructura, sinó en seguir tot el procés tecnològic:
-</p>
-
-<ul>
-  <li>Pensar possibles solucions abans de començar.</li>
-  <li>Construir un primer prototip funcional.</li>
-  <li>Fer proves reals de llançament.</li>
-  <li>Detectar problemes i punts de millora.</li>
-  <li>Modificar i optimitzar la catapulta.</li>
-  <li>Presentar el resultat final i explicar les decisions preses.</li>
-</ul>
-
-<p>
-  Cada equip haurà d’experimentar amb diferents mecanismes, estructures i sistemes de llançament per aconseguir superar el repte proposat.
-</p>
-
-<p>
-  Segons el nivell educatiu, el repte tindrà objectius diferents: aconseguir la màxima distància o aconseguir la màxima precisió.
-</p>
-
-<div class="time-box">
-
-  <h3>⏱️ Seqüència del taller</h3>
-
-  <ul>
-    <li><strong>5 minuts</strong> → Entendre el repte i planificar el disseny.</li>
-
-    <li><strong>15 minuts</strong> → Construir el primer prototip de la catapulta.</li>
-
-    <li><strong>10 minuts</strong> → Fer proves i experimentar amb el mecanisme.</li>
-
-    <li><strong>10 minuts</strong> → Millorar i modificar el disseny.</li>
-
-    <li><strong>10 minuts</strong> → Realitzar el repte final i presentar el prototip.</li>
-  </ul>
-
-</div>
-```
-
-  <!-- REPTE CICLE MITJÀ -->
-
-  <div class="card">
-
-    <h3>🚀 Cicle Mitjà (3r i 4t)</h3>
-
-    <div class="challenge">
-      <strong>Repte:</strong> La catapulta més llunyana
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-kicker">SETMANA STEAM · TECNOLOGIA</span>
+      <h1>Construïm catapultes amb LEGO</h1>
     </div>
+    <div id="saveStatus" class="save-status">Les dades es guarden en aquest dispositiu</div>
+  </header>
 
-    <p>
-      Els equips hauran de construir una catapulta capaç de llençar el projectil el més lluny possible.
-    </p>
+  <main class="app-shell">
+    <nav class="progress-nav" aria-label="Progrés de l'activitat">
+      <button data-step="1">1<span>Identificació</span></button>
+      <button data-step="2">2<span>Repte</span></button>
+      <button data-step="3">3<span>Descobrim</span></button>
+      <button data-step="4">4<span>Qüestionari</span></button>
+      <button data-step="5">5<span>Hipòtesis</span></button>
+      <button data-step="6">6<span>Construïm</span></button>
+      <button data-step="7">7<span>Provem</span></button>
+      <button data-step="8">8<span>Validem</span></button>
+      <button data-step="9">9<span>Concloem</span></button>
+    </nav>
 
-    <p>
-      L’objectiu principal serà entendre el funcionament del mecanisme i experimentar amb diferents solucions per aconseguir més força i distància.
-    </p>
+    <!-- 1. IDENTIFICACIÓ -->
+    <section class="step active" data-step="1">
+      <div class="hero">
+        <p class="eyebrow">TALLER D'ENGINYERIA</p>
+        <h2>Abans de començar, identifiqueu el vostre treball</h2>
+        <p>Treballareu com un equip d'enginyeria: fareu prediccions, construireu un prototip, el programareu, fareu proves i millorareu el vostre disseny.</p>
+      </div>
 
-    <h3>Què faran?</h3>
+      <div class="choice-grid">
+        <button class="choice-card" id="newWorkBtn">
+          <strong>Començar un treball nou</strong>
+          <span>Crear un equip i iniciar una investigació.</span>
+        </button>
+        <button class="choice-card secondary" id="recoverWorkBtn">
+          <strong>Recuperar el treball</strong>
+          <span>Continuar des del punt on vau acabar en aquest navegador.</span>
+        </button>
+      </div>
 
-    <ul>
-      <li>Pensar un primer disseny.</li>
-      <li>Construir una catapulta funcional.</li>
-      <li>Fer proves de llançament.</li>
-      <li>Detectar problemes.</li>
-      <li>Modificar el prototip per millorar-lo.</li>
-    </ul>
+      <form id="identificationForm" class="form-card hidden">
+        <h3>Informació de l'equip</h3>
 
-    <h3>Què treballaran?</h3>
+        <label>
+          Nom de l'equip o alumne
+          <input id="teamName" required placeholder="Ex.: Els Enginyers">
+        </label>
 
-    <ul>
-      <li>Força i moviment.</li>
-      <li>Relació causa-efecte.</li>
-      <li>Estabilitat de les estructures.</li>
-      <li>Experimentació i millora.</li>
-    </ul>
+        <label>
+          Integrants
+          <textarea id="members" required placeholder="Escriviu un nom per línia"></textarea>
+        </label>
 
-  </div>
+        <div class="form-grid">
+          <label>
+            Curs
+            <select id="course" required>
+              <option value="">Seleccioneu...</option>
+              <option>3r de Primària</option>
+              <option>4t de Primària</option>
+              <option>5è de Primària</option>
+              <option>6è de Primària</option>
+            </select>
+          </label>
 
-  <!-- REPTE CICLE SUPERIOR -->
+          <label>
+            Grup
+            <input id="classGroup" placeholder="Ex.: A">
+          </label>
+        </div>
 
-  <div class="card">
+        <fieldset>
+          <legend>Seleccioneu el repte</legend>
+          <label class="radio-option">
+            <input type="radio" name="challenge" value="distance" checked>
+            <span><strong>Distància</strong><br>Fer arribar el projectil el més lluny possible.</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="challenge" value="precision">
+            <span><strong>Precisió</strong><br>Fer arribar el projectil al més a prop possible d'un objectiu.</span>
+          </label>
+        </fieldset>
 
-    <h3>🎯 Cicle Superior (5è i 6è)</h3>
+        <button class="primary" type="submit">Crear el nostre treball →</button>
+      </form>
 
-    <div class="challenge">
-      <strong>Repte:</strong> La catapulta de precisió
-    </div>
+      <div id="recoverPanel" class="form-card hidden">
+        <h3>Recuperar el treball</h3>
+        <p id="recoverMessage">Si ja heu començat aquesta activitat en aquest dispositiu, podeu continuar.</p>
+        <button class="primary" id="continueSavedBtn">Continuar el treball desat</button>
+      </div>
+    </section>
 
-    <p>
-      Els equips hauran de construir una catapulta capaç d’encertar objectius concrets amb la màxima precisió possible.
-    </p>
+    <!-- 2. REPTE -->
+    <section class="step" data-step="2">
+      <p class="eyebrow">FASE 1 · EL REPTE</p>
+      <h2 id="challengeTitle">El vostre repte</h2>
+      <div id="challengeDescription" class="challenge-box"></div>
 
-    <p>
-      El repte exigirà més control del mecanisme, més estabilitat i una millora contínua basada en les proves realitzades.
-    </p>
+      <div class="timeline">
+        <div><strong>5-10 min</strong><span>Pensem i planifiquem</span></div>
+        <div><strong>15-20 min</strong><span>Construïm i programem</span></div>
+        <div><strong>15-20 min</strong><span>Provem i millorem</span></div>
+        <div><strong>5-10 min</strong><span>Analitzem i concloem</span></div>
+      </div>
 
-    <h3>Què faran?</h3>
+      <div class="process-flow">
+        <span>Pensem</span><b>→</b>
+        <span>Construïm</span><b>→</b>
+        <span>Programem</span><b>→</b>
+        <span>Provem</span><b>→</b>
+        <span>Millorem</span><b>→</b>
+        <span>Concloem</span>
+      </div>
 
-    <ul>
-      <li>Dissenyar una estructura estable.</li>
-      <li>Construir un primer prototip.</li>
-      <li>Fer proves de precisió.</li>
-      <li>Analitzar els errors dels llançaments.</li>
-      <li>Ajustar i optimitzar la catapulta.</li>
-    </ul>
+      <div class="step-actions">
+        <button class="primary next-step">Continuar →</button>
+      </div>
+    </section>
 
-    <h3>Què treballaran?</h3>
+    <!-- 3. DESCOBRIM -->
+    <section class="step" data-step="3">
+      <p class="eyebrow">FASE 2 · DESCOBRIM</p>
+      <h2>Com funciona una catapulta?</h2>
 
-    <ul>
-      <li>Control i precisió.</li>
-      <li>Optimització de mecanismes.</li>
-      <li>Anàlisi de resultats.</li>
-      <li>Millora iterativa.</li>
-      <li>Estabilitat estructural.</li>
-    </ul>
+      <div class="theory-grid">
+        <article class="theory-card">
+          <h3>📜 Una mica d'història</h3>
+          <p>Les màquines de llançament es van utilitzar per impulsar objectes a distància. Actualment ens serveixen per estudiar mecanismes, forces, moviment i disseny.</p>
+        </article>
 
-  </div>
+        <article class="theory-card">
+          <h3>⚙️ Una palanca</h3>
+          <p>El braç de la catapulta gira al voltant d'un punt de suport: el <strong>fulcre</strong>. La posició del fulcre, la longitud del braç i el lloc on s'aplica la força poden modificar el resultat.</p>
+        </article>
 
-</section>
-<section id="proces">
-  <h2>El Procés Tecnològic</h2>
+        <article class="theory-card">
+          <h3>🤖 Un sistema tecnològic</h3>
+          <p><strong>Botó del Hub → Programa → Motor → Mecanisme → Braç → Projectil</strong></p>
+          <p>El motor aporta moviment. El mecanisme el transmet al braç. El programa controla quan comença i acaba l'acció.</p>
+        </article>
 
-  <div class="steps">
+        <article class="theory-card">
+          <h3>🔬 Investigar no és provar a l'atzar</h3>
+          <p>Canviarem una variable, observarem què passa, registrarem les dades i compararem els resultats.</p>
+        </article>
+      </div>
 
-    <div class="step">
-      <h3>1. Pensem</h3>
-      <p>
-        Parleu en equip i decidiu com serà la vostra catapulta.
-      </p>
-    </div>
+      <div class="question-box">
+        <h3>Abans de construir...</h3>
+        <p>Quines decisions creieu que poden canviar la força, la distància o la precisió del llançament?</p>
+      </div>
 
-    <div class="step">
-      <h3>2. Construïm</h3>
-      <p>
-        Creeu el primer prototip amb peces LEGO.
-      </p>
-    </div>
+      <div class="step-actions">
+        <button class="secondary prev-step">← Enrere</button>
+        <button class="primary next-step">Posa't a prova →</button>
+      </div>
+    </section>
 
-    <div class="step">
-      <h3>3. Provem</h3>
-      <p>
-        Feu llançaments i observeu què funciona.
-      </p>
-    </div>
+    <!-- 4. QÜESTIONARI -->
+    <section class="step" data-step="4">
+      <p class="eyebrow">FASE 3 · QÜESTIONARI INICIAL</p>
+      <h2>Què sabeu abans de començar?</h2>
+      <p class="intro">No és una nota. Les vostres respostes serviran per comparar les idees inicials amb allò que descobriu durant la construcció.</p>
 
-    <div class="step">
-      <h3>4. Millorem</h3>
-      <p>
-        Modifiqueu el disseny per aconseguir més distància.
-      </p>
-    </div>
+      <div id="quizContainer"></div>
 
-    <div class="step">
-      <h3>5. Presentem</h3>
-      <p>
-        Expliqueu què heu après i com heu millorat el vostre prototip.
-      </p>
-    </div>
+      <div id="quizFeedback" class="feedback hidden"></div>
 
-  </div>
-</section>
+      <div class="step-actions">
+        <button class="secondary prev-step">← Enrere</button>
+        <button class="primary" id="finishQuizBtn">Guardar respostes i continuar →</button>
+      </div>
+    </section>
 
-<section id="materials">
-  <h2>Materials</h2>
+    <!-- 5. HIPÒTESIS -->
+    <section class="step" data-step="5">
+      <p class="eyebrow">FASE 4 · FEM HIPÒTESIS</p>
+      <h2>Què voleu investigar?</h2>
+      <p class="intro">Seleccioneu entre <strong>1 i 3 variables</strong>. Després fareu una predicció i decidireu què observareu.</p>
 
-  <div class="card">
-    <ul>
-      <li>Peces LEGO variades</li>
-      <li>Eixos i connectors</li>
-      <li>Projectils lleugers</li>
-      <li>Cinta mètrica</li>
-      <li>Dianes o zones de caiguda</li>
-    </ul>
-  </div>
-</section>
+      <div id="hypothesesContainer" class="hypothesis-grid"></div>
 
-<section id="fases">
-  <h2>Fases del Taller</h2>
+      <div id="predictionPanel" class="prediction-panel hidden">
+        <h3>Les vostres prediccions</h3>
+        <div id="predictionForms"></div>
+      </div>
 
-  <div class="card">
-    <h3>1. Disseny</h3>
-    <p>
-      Penseu com fareu una estructura estable i un bon mecanisme de llançament.
-    </p>
+      <div class="step-actions">
+        <button class="secondary prev-step">← Enrere</button>
+        <button class="primary" id="saveHypothesesBtn">Guardar hipòtesis →</button>
+      </div>
+    </section>
 
-    <h3>2. Construcció</h3>
-    <p>
-      Construïu la primera versió de la catapulta.
-    </p>
+    <!-- 6. CONSTRUÏM -->
+    <section class="step" data-step="6">
+      <p class="eyebrow">FASE 5 · CONSTRUÏM I PROGRAMEM</p>
+      <h2>Prepareu el primer prototip</h2>
 
-    <h3>3. Experimentació</h3>
-    <p>
-      Feu proves i observeu:
-    </p>
+      <div class="checklist-grid">
+        <div class="checklist-card">
+          <h3>🏗️ Estructura</h3>
+          <label><input type="checkbox" data-check="stableBase"> Base estable</label>
+          <label><input type="checkbox" data-check="movingArm"> Braç que es mou correctament</label>
+          <label><input type="checkbox" data-check="fixedFulcrum"> Fulcre ben fixat</label>
+          <label><input type="checkbox" data-check="reinforcedStructure"> Estructura reforçada</label>
+        </div>
 
-    <ul>
-      <li>Arriba lluny?</li>
-      <li>És estable?</li>
-      <li>El braç es mou bé?</li>
-      <li>Quina força té?</li>
-    </ul>
+        <div class="checklist-card">
+          <h3>🤖 Motorització</h3>
+          <label><input type="checkbox" data-check="motorConnected"> Motor connectat</label>
+          <label><input type="checkbox" data-check="mechanismWorks"> Mecanisme funcional</label>
+          <label><input type="checkbox" data-check="armMoves"> El motor mou el braç</label>
+        </div>
 
-    <h3>4. Millora</h3>
-    <p>
-      Modifiqueu:
-    </p>
+        <div class="checklist-card">
+          <h3>💻 Programació</h3>
+          <label><input type="checkbox" data-check="buttonStarts"> El botó del Hub inicia l'acció</label>
+          <label><input type="checkbox" data-check="motorStops"> El motor s'atura al punt previst</label>
+          <label><input type="checkbox" data-check="returnPosition"> El mecanisme pot tornar a la posició inicial</label>
+        </div>
+      </div>
 
-    <ul>
-      <li>la llargada del braç,</li>
-      <li>la tensió de les gomes,</li>
-      <li>la base,</li>
-      <li>la forma del mecanisme.</li>
-    </ul>
-  </div>
-</section>
+      <div class="build-notes">
+        <label>
+          Quin és el vostre primer disseny?
+          <textarea id="firstDesignNotes" placeholder="Descriviu breument com heu resolt el mecanisme..."></textarea>
+        </label>
+      </div>
 
-<section id="final">
-  <h2>Repte Final</h2>
+      <div class="step-actions">
+        <button class="secondary prev-step">← Enrere</button>
+        <button class="primary next-step">El prototip està preparat →</button>
+      </div>
+    </section>
 
-  <div class="card">
-    <p>
-      Cada equip tindrà <strong>3 llançaments finals</strong>.
-    </p>
+    <!-- 7. PROVES -->
+    <section class="step" data-step="7">
+      <p class="eyebrow">FASE 6 · PROVEM I MILLOREM</p>
+      <h2>Registre d'experiments</h2>
+      <p class="intro">No feu canvis a l'atzar. Anoteu què modifiqueu i què observeu.</p>
 
-    <div class="challenge">
-      <strong>Guanya la catapulta que aconsegueixi més distància.</strong>
-    </div>
+      <form id="experimentForm" class="form-card compact">
+        <div class="form-grid">
+          <label>
+            Hipòtesi investigada
+            <select id="experimentHypothesis"></select>
+          </label>
+          <label>
+            Número de prova
+            <input id="experimentNumber" type="number" min="1" value="1" required>
+          </label>
+        </div>
 
-    <h3>Després del repte...</h3>
+        <label>
+          Què heu modificat?
+          <input id="modification" required placeholder="Ex.: Hem allargat el braç amb dues peces">
+        </label>
 
-    <p>Cada equip explicarà:</p>
+        <div class="form-grid metrics">
+          <label>
+            Distància (cm)
+            <input id="distance" type="number" min="0" step="0.1">
+          </label>
+          <label>
+            Error de precisió (cm)
+            <input id="accuracy" type="number" min="0" step="0.1">
+          </label>
+          <label>
+            Estabilitat
+            <select id="stability">
+              <option value="">Seleccioneu...</option>
+              <option>Bona</option>
+              <option>Regular</option>
+              <option>Dolenta</option>
+            </select>
+          </label>
+        </div>
 
-    <ul>
-      <li>Quin problema han tingut</li>
-      <li>Quina millora han fet</li>
-      <li>Què ha funcionat millor</li>
-      <li>Què canviarien si tinguessin més temps</li>
-    </ul>
-  </div>
-</section>
+        <label>
+          Què heu observat?
+          <textarea id="observations" required placeholder="Descriviu què ha passat i si el resultat coincideix amb la vostra predicció."></textarea>
+        </label>
 
-<footer>
-  <p>Setmana STEAM · Tecnologia · Construcció de Catapultes amb LEGO</p>
-</footer>
-<script src="script.js"></script>
+        <button class="primary" type="submit">+ Guardar prova</button>
+      </form>
+
+      <div id="experimentsList" class="experiments-list"></div>
+
+      <div class="step-actions">
+        <button class="secondary prev-step">← Enrere</button>
+        <button class="primary next-step">Ja tenim prou dades →</button>
+      </div>
+    </section>
+
+    <!-- 8. VALIDEM -->
+    <section class="step" data-step="8">
+      <p class="eyebrow">FASE 7 · VALIDEM</p>
+      <h2>Compareu les prediccions amb els resultats</h2>
+      <div id="validationContainer"></div>
+
+      <div class="step-actions">
+        <button class="secondary prev-step">← Enrere</button>
+        <button class="primary" id="saveValidationBtn">Guardar validacions →</button>
+      </div>
+    </section>
+
+    <!-- 9. CONCLUSIONS -->
+    <section class="step" data-step="9">
+      <p class="eyebrow">FASE 8 · CONCLUSIONS</p>
+      <h2>Què heu descobert?</h2>
+
+      <form id="conclusionsForm" class="form-card">
+        <label>
+          Quina modificació ha funcionat millor?
+          <textarea id="bestImprovement" required></textarea>
+        </label>
+
+        <label>
+          Quin ha estat el problema més important?
+          <textarea id="mainProblem" required></textarea>
+        </label>
+
+        <label>
+          Què heu après sobre el funcionament de la catapulta?
+          <textarea id="mainLearning" required></textarea>
+        </label>
+
+        <label>
+          Què investigaríeu o milloraríeu si tinguéssiu més temps?
+          <textarea id="nextStep" required></textarea>
+        </label>
+
+        <button class="primary" type="submit">Finalitzar i veure l'informe →</button>
+      </form>
+
+      <section id="finalReport" class="final-report hidden"></section>
+
+      <div class="report-actions hidden" id="reportActions">
+        <button class="secondary" id="printReportBtn">Imprimir / Desar com a PDF</button>
+        <button class="danger" id="resetWorkBtn">Començar un treball nou</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Construïm catapultes amb LEGO · Taller STEAM · Primera versió MVP</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
