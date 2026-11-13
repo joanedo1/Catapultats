@@ -721,6 +721,97 @@ async function saveToCloud() {
     document.getElementById("saveStatus").textContent =
       "⚠ Error de connexió";
 
+    async function loadWorkFromCloud(workId) {
+  if (!API_URL || API_URL.includes("ENGANXA")) {
+    throw new Error("L'API de Google Sheets no està configurada.");
+  }
+
+  if (!workId) {
+    throw new Error("Cal indicar el codi del treball.");
+  }
+
+  try {
+    const url = `${API_URL}?action=get&workId=${encodeURIComponent(workId)}`;
+
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error("No s'ha pogut connectar amb el servidor.");
+    }
+
+    const result = await response.json();
+
+    if (!result.success) {
+      throw new Error(result.error || "No s'ha trobat aquest treball.");
+    }
+
+    // Recuperem tot l'estat del treball
+    state = result.work;
+
+    // També en guardem una còpia local
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(state)
+    );
+
+    console.log("Treball recuperat del núvol:", state);
+
+    return state;
+
+  } catch (error) {
+    console.error("Error recuperant el treball:", error);
+    throw error;
+  }
+}
+
+   async function recoverWork(workId) {
+
+  const status = document.getElementById("saveStatus");
+
+  try {
+
+    if (status) {
+      status.textContent = "⏳ Recuperant el treball...";
+    }
+
+    await loadWorkFromCloud(workId);
+
+    if (status) {
+      status.textContent = "✓ Treball recuperat correctament";
+    }
+
+    // Actualitza la interfície amb les dades recuperades
+    updateUI();
+
+  } catch (error) {
+
+    console.error(error);
+
+    if (status) {
+      status.textContent =
+        `⚠ ${error.message}`;
+    }
+
+    alert(
+      "No s'ha pogut recuperar el treball.\n\n" +
+      error.message
+    );
+
+  }
+} 
+
   }
 
 }
+document
+  .getElementById("recoverWorkBtn")
+  .addEventListener("click", async () => {
+
+    const workId = document
+      .getElementById("workIdInput")
+      .value
+      .trim();
+
+    await recoverWork(workId);
+
+  });
