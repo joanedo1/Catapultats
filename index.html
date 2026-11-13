@@ -1,387 +1,1412 @@
 <!DOCTYPE html>
 <html lang="ca">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Construïm catapultes amb LEGO</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Construcció de catapultes amb LEGO</title>
+
+  <meta
+    name="description"
+    content="Activitat STEAM de construcció, programació i experimentació amb catapultes LEGO SPIKE."
+  >
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header class="topbar">
-    <div class="brand">
-      <span class="brand-kicker">SETMANA STEAM · TECNOLOGIA</span>
+
+  <!-- =====================================================
+       CAPÇALERA
+  ====================================================== -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <p class="eyebrow">
+        SETMANA STEAM · TECNOLOGIA
+      </p>
+
       <h1>Construïm catapultes amb LEGO</h1>
+
+      <p class="hero-description">
+        Penseu, construïu, programeu, proveu i milloreu
+        una catapulta accionada amb un motor LEGO SPIKE.
+      </p>
+
     </div>
-    <div id="saveStatus" class="save-status">Les dades es guarden en aquest dispositiu</div>
+
   </header>
 
-  <main class="app-shell">
-    <nav class="progress-nav" aria-label="Progrés de l'activitat">
-      <button data-step="1">1<span>Identificació</span></button>
-      <button data-step="2">2<span>Repte</span></button>
-      <button data-step="3">3<span>Descobrim</span></button>
-      <button data-step="4">4<span>Qüestionari</span></button>
-      <button data-step="5">5<span>Hipòtesis</span></button>
-      <button data-step="6">6<span>Construïm</span></button>
-      <button data-step="7">7<span>Provem</span></button>
-      <button data-step="8">8<span>Validem</span></button>
-      <button data-step="9">9<span>Concloem</span></button>
-    </nav>
 
-    <!-- 1. IDENTIFICACIÓ -->
-    <section class="step active" data-step="1">
-      <div class="hero">
-        <p class="eyebrow">TALLER D'ENGINYERIA</p>
-        <h2>Abans de començar, identifiqueu el vostre treball</h2>
-        <p>Treballareu com un equip d'enginyeria: fareu prediccions, construireu un prototip, el programareu, fareu proves i millorareu el vostre disseny.</p>
-      </div>
+  <!-- =====================================================
+       CONTINGUT PRINCIPAL
+  ====================================================== -->
 
-      <div class="choice-grid">
-        <button class="choice-card" id="newWorkBtn">
-          <strong>Començar un treball nou</strong>
-          <span>Crear un equip i iniciar una investigació.</span>
-        </button>
-        <button class="choice-card secondary" id="recoverWorkBtn">
-          <strong>Recuperar el treball</strong>
-          <span>Continuar des del punt on vau acabar en aquest navegador.</span>
-        </button>
-      </div>
-<div class="recover-work">
-  <h3>Continuar un treball anterior</h3>
+  <main class="app-container">
 
-  <p>
-    Si ja heu començat l'activitat, introduïu el vostre codi de treball
-    per recuperar tota la informació.
-  </p>
 
-  <div class="form-group">
-    <label for="workIdInput">Codi del treball</label>
+    <!-- =====================================================
+         INICI
+    ====================================================== -->
 
-    <input
-      type="text"
-      id="workIdInput"
-      placeholder="Exemple: CAT-AB12C"
-      autocomplete="off"
+    <section
+      id="startScreen"
+      class="start-screen"
     >
-  </div>
 
-  <button
-    type="button"
-    id="recoverWorkBtn"
-    class="secondary-button"
-  >
-    Recuperar treball
-  </button>
-</div>
-      <form id="identificationForm" class="form-card hidden">
-        <h3>Informació de l'equip</h3>
+      <div class="intro-card">
 
-        <label>
-          Nom de l'equip o alumne
-          <input id="teamName" required placeholder="Ex.: Els Enginyers">
-        </label>
+        <h2>Preparats per començar?</h2>
 
-        <label>
-          Integrants
-          <textarea id="members" required placeholder="Escriviu un nom per línia"></textarea>
-        </label>
+        <p>
+          Durant aquesta activitat treballareu com un equip
+          d'enginyeria. Haureu de dissenyar una catapulta,
+          construir-ne un prototip, programar-ne el moviment
+          i millorar-lo a partir de les proves.
+        </p>
 
-        <div class="form-grid">
-          <label>
-            Curs
-            <select id="course" required>
-              <option value="">Seleccioneu...</option>
-              <option>3r de Primària</option>
-              <option>4t de Primària</option>
-              <option>5è de Primària</option>
-              <option>6è de Primària</option>
-            </select>
-          </label>
+        <div class="start-actions">
 
-          <label>
-            Grup
-            <input id="classGroup" placeholder="Ex.: A">
-          </label>
+          <button
+            type="button"
+            id="newWorkBtn"
+            class="primary-button"
+          >
+            Començar un treball nou
+          </button>
+
+          <button
+            type="button"
+            id="recoverWorkBtn"
+            class="secondary-button"
+          >
+            Recuperar un treball
+          </button>
+
         </div>
 
-        <fieldset>
-          <legend>Seleccioneu el repte</legend>
-          <label class="radio-option">
-            <input type="radio" name="challenge" value="distance" checked>
-            <span><strong>Distància</strong><br>Fer arribar el projectil el més lluny possible.</span>
+      </div>
+
+
+      <!-- =================================================
+           RECUPERAR TREBALL
+      ================================================== -->
+
+      <div
+        id="recoverPanel"
+        class="recover-panel hidden"
+      >
+
+        <h2>Continuar un treball anterior</h2>
+
+        <p>
+          Introduïu el codi del vostre treball per recuperar
+          tota la informació desada al Google Sheets.
+        </p>
+
+        <div class="form-group">
+
+          <label for="workIdInput">
+            Codi del treball
           </label>
-          <label class="radio-option">
-            <input type="radio" name="challenge" value="precision">
-            <span><strong>Precisió</strong><br>Fer arribar el projectil al més a prop possible d'un objectiu.</span>
+
+          <input
+            type="text"
+            id="workIdInput"
+            placeholder="Exemple: CAT-AB12C"
+            autocomplete="off"
+          >
+
+        </div>
+
+        <p class="help-text">
+          El codi té un format semblant a:
+          <strong>CAT-AB12C</strong>.
+        </p>
+
+        <div class="recover-actions">
+
+          <button
+            type="button"
+            id="loadCloudBtn"
+            class="primary-button"
+          >
+            Recuperar del núvol
+          </button>
+
+          <button
+            type="button"
+            id="continueSavedBtn"
+            class="secondary-button"
+          >
+            Continuar el treball local
+          </button>
+
+        </div>
+
+        <p
+          id="recoverMessage"
+          class="status-message"
+        ></p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FORMULARI D'IDENTIFICACIÓ
+    ====================================================== -->
+
+    <section
+      id="identificationForm"
+      class="identification-section hidden"
+    >
+
+      <form>
+
+        <div class="section-heading">
+
+          <span class="step-number">1</span>
+
+          <div>
+
+            <h2>Identifiqueu el vostre equip</h2>
+
+            <p>
+              Completeu les dades abans de començar
+              el procés de construcció.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="teamName">
+            Nom de l'equip
           </label>
+
+          <input
+            type="text"
+            id="teamName"
+            required
+            placeholder="Exemple: Enginyers del Pirineu"
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="members">
+            Membres de l'equip
+          </label>
+
+          <textarea
+            id="members"
+            rows="5"
+            required
+            placeholder="Escriviu un nom a cada línia"
+          ></textarea>
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label for="course">
+              Curs
+            </label>
+
+            <select
+              id="course"
+              required
+            >
+
+              <option value="">
+                Seleccioneu el curs
+              </option>
+
+              <option value="3r de Primària">
+                3r de Primària
+              </option>
+
+              <option value="4t de Primària">
+                4t de Primària
+              </option>
+
+              <option value="5è de Primària">
+                5è de Primària
+              </option>
+
+              <option value="6è de Primària">
+                6è de Primària
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="classGroup">
+              Grup
+            </label>
+
+            <input
+              type="text"
+              id="classGroup"
+              placeholder="Exemple: A"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- =============================================
+             SELECCIÓ DEL REPTE
+        ============================================== -->
+
+        <fieldset class="challenge-selector">
+
+          <legend>
+            Seleccioneu el repte
+          </legend>
+
+
+          <label class="challenge-option">
+
+            <input
+              type="radio"
+              name="challenge"
+              value="distance"
+              checked
+            >
+
+            <div>
+
+              <strong>
+                Cicle Mitjà · Distància
+              </strong>
+
+              <span>
+                Construïu una catapulta capaç de llençar
+                el projectil tan lluny com sigui possible.
+              </span>
+
+            </div>
+
+          </label>
+
+
+          <label class="challenge-option">
+
+            <input
+              type="radio"
+              name="challenge"
+              value="accuracy"
+            >
+
+            <div>
+
+              <strong>
+                Cicle Superior · Precisió
+              </strong>
+
+              <span>
+                Construïu una catapulta capaç d'arribar
+                de manera controlada a un objectiu.
+              </span>
+
+            </div>
+
+          </label>
+
         </fieldset>
 
-        <button class="primary" type="submit">Crear el nostre treball →</button>
+
+        <button
+          type="submit"
+          class="primary-button large-button"
+        >
+          Començar l'activitat
+        </button>
+
       </form>
 
-      <div id="recoverPanel" class="form-card hidden">
-        <h3>Recuperar el treball</h3>
-        <p id="recoverMessage">Si ja heu començat aquesta activitat en aquest dispositiu, podeu continuar.</p>
-        <button class="primary" id="continueSavedBtn">Continuar el treball desat</button>
-      </div>
     </section>
 
-    <!-- 2. REPTE -->
-    <section class="step" data-step="2">
-      <p class="eyebrow">FASE 1 · EL REPTE</p>
-      <h2 id="challengeTitle">El vostre repte</h2>
-      <div id="challengeDescription" class="challenge-box"></div>
 
-      <div class="timeline">
-        <div><strong>5-10 min</strong><span>Pensem i planifiquem</span></div>
-        <div><strong>15-20 min</strong><span>Construïm i programem</span></div>
-        <div><strong>15-20 min</strong><span>Provem i millorem</span></div>
-        <div><strong>5-10 min</strong><span>Analitzem i concloem</span></div>
+    <!-- =====================================================
+         CODI DEL TREBALL
+    ====================================================== -->
+
+    <section class="work-code-bar">
+
+      <div>
+
+        <span class="work-code-label">
+          Codi del vostre treball
+        </span>
+
+        <strong id="workIdDisplay">
+          —
+        </strong>
+
       </div>
 
-      <div class="process-flow">
-        <span>Pensem</span><b>→</b>
-        <span>Construïm</span><b>→</b>
-        <span>Programem</span><b>→</b>
-        <span>Provem</span><b>→</b>
-        <span>Millorem</span><b>→</b>
-        <span>Concloem</span>
-      </div>
+      <p>
+        Guardeu aquest codi. El necessitareu per recuperar
+        el vostre treball des d'un altre dispositiu.
+      </p>
 
-      <div class="step-actions">
-        <button class="primary next-step">Continuar →</button>
-      </div>
     </section>
 
-    <!-- 3. DESCOBRIM -->
-    <section class="step" data-step="3">
-      <p class="eyebrow">FASE 2 · DESCOBRIM</p>
-      <h2>Com funciona una catapulta?</h2>
 
-      <div class="theory-grid">
-        <article class="theory-card">
-          <h3>📜 Una mica d'història</h3>
-          <p>Les màquines de llançament es van utilitzar per impulsar objectes a distància. Actualment ens serveixen per estudiar mecanismes, forces, moviment i disseny.</p>
-        </article>
+    <!-- =====================================================
+         NAVEGACIÓ DEL PROCÉS
+    ====================================================== -->
 
-        <article class="theory-card">
-          <h3>⚙️ Una palanca</h3>
-          <p>El braç de la catapulta gira al voltant d'un punt de suport: el <strong>fulcre</strong>. La posició del fulcre, la longitud del braç i el lloc on s'aplica la força poden modificar el resultat.</p>
-        </article>
+    <nav
+      class="progress-nav"
+      aria-label="Procés de treball"
+    >
 
-        <article class="theory-card">
-          <h3>🤖 Un sistema tecnològic</h3>
-          <p><strong>Botó del Hub → Programa → Motor → Mecanisme → Braç → Projectil</strong></p>
-          <p>El motor aporta moviment. El mecanisme el transmet al braç. El programa controla quan comença i acaba l'acció.</p>
-        </article>
+      <button
+        type="button"
+        data-step="1"
+      >
+        1. Repte
+      </button>
 
-        <article class="theory-card">
-          <h3>🔬 Investigar no és provar a l'atzar</h3>
-          <p>Canviarem una variable, observarem què passa, registrarem les dades i compararem els resultats.</p>
-        </article>
-      </div>
+      <button
+        type="button"
+        data-step="2"
+      >
+        2. Descobrim
+      </button>
 
-      <div class="question-box">
-        <h3>Abans de construir...</h3>
-        <p>Quines decisions creieu que poden canviar la força, la distància o la precisió del llançament?</p>
-      </div>
+      <button
+        type="button"
+        data-step="3"
+      >
+        3. Qüestionari
+      </button>
 
-      <div class="step-actions">
-        <button class="secondary prev-step">← Enrere</button>
-        <button class="primary next-step">Posa't a prova →</button>
-      </div>
-    </section>
+      <button
+        type="button"
+        data-step="4"
+      >
+        4. Hipòtesis
+      </button>
 
-    <!-- 4. QÜESTIONARI -->
-    <section class="step" data-step="4">
-      <p class="eyebrow">FASE 3 · QÜESTIONARI INICIAL</p>
-      <h2>Què sabeu abans de començar?</h2>
-      <p class="intro">No és una nota. Les vostres respostes serviran per comparar les idees inicials amb allò que descobriu durant la construcció.</p>
+      <button
+        type="button"
+        data-step="5"
+      >
+        5. Construïm
+      </button>
 
-      <div id="quizContainer"></div>
+      <button
+        type="button"
+        data-step="6"
+      >
+        6. Provem
+      </button>
 
-      <div id="quizFeedback" class="feedback hidden"></div>
+      <button
+        type="button"
+        data-step="7"
+      >
+        7. Validem
+      </button>
 
-      <div class="step-actions">
-        <button class="secondary prev-step">← Enrere</button>
-        <button class="primary" id="finishQuizBtn">Guardar respostes i continuar →</button>
-      </div>
-    </section>
+      <button
+        type="button"
+        data-step="8"
+      >
+        8. Concloem
+      </button>
 
-    <!-- 5. HIPÒTESIS -->
-    <section class="step" data-step="5">
-      <p class="eyebrow">FASE 4 · FEM HIPÒTESIS</p>
-      <h2>Què voleu investigar?</h2>
-      <p class="intro">Seleccioneu entre <strong>1 i 3 variables</strong>. Després fareu una predicció i decidireu què observareu.</p>
+    </nav>
 
-      <div id="hypothesesContainer" class="hypothesis-grid"></div>
 
-      <div id="predictionPanel" class="prediction-panel hidden">
-        <h3>Les vostres prediccions</h3>
-        <div id="predictionForms"></div>
-      </div>
+    <!-- =====================================================
+         PAS 1 · REPTE
+    ====================================================== -->
 
-      <div class="step-actions">
-        <button class="secondary prev-step">← Enrere</button>
-        <button class="primary" id="saveHypothesesBtn">Guardar hipòtesis →</button>
-      </div>
-    </section>
+    <section
+      class="step active"
+      data-step="1"
+    >
 
-    <!-- 6. CONSTRUÏM -->
-    <section class="step" data-step="6">
-      <p class="eyebrow">FASE 5 · CONSTRUÏM I PROGRAMEM</p>
-      <h2>Prepareu el primer prototip</h2>
+      <div class="content-card">
 
-      <div class="checklist-grid">
-        <div class="checklist-card">
-          <h3>🏗️ Estructura</h3>
-          <label><input type="checkbox" data-check="stableBase"> Base estable</label>
-          <label><input type="checkbox" data-check="movingArm"> Braç que es mou correctament</label>
-          <label><input type="checkbox" data-check="fixedFulcrum"> Fulcre ben fixat</label>
-          <label><input type="checkbox" data-check="reinforcedStructure"> Estructura reforçada</label>
+        <div class="section-heading">
+
+          <span class="step-number">1</span>
+
+          <div>
+
+            <h2>El repte</h2>
+
+            <p>
+              Abans de construir, heu d'entendre què voleu aconseguir.
+            </p>
+
+          </div>
+
         </div>
 
-        <div class="checklist-card">
-          <h3>🤖 Motorització</h3>
-          <label><input type="checkbox" data-check="motorConnected"> Motor connectat</label>
-          <label><input type="checkbox" data-check="mechanismWorks"> Mecanisme funcional</label>
-          <label><input type="checkbox" data-check="armMoves"> El motor mou el braç</label>
+
+        <h2 id="challengeTitle">
+          La catapulta més llunyana
+        </h2>
+
+
+        <div id="challengeDescription"></div>
+
+
+        <div class="challenge-process">
+
+          <article>
+
+            <span>1</span>
+
+            <h3>Penseu</h3>
+
+            <p>
+              Analitzeu com podria funcionar el vostre mecanisme.
+            </p>
+
+          </article>
+
+          <article>
+
+            <span>2</span>
+
+            <h3>Construïu</h3>
+
+            <p>
+              Creeu un primer prototip amb LEGO SPIKE.
+            </p>
+
+          </article>
+
+          <article>
+
+            <span>3</span>
+
+            <h3>Programeu</h3>
+
+            <p>
+              Feu funcionar el motor des del Hub.
+            </p>
+
+          </article>
+
+          <article>
+
+            <span>4</span>
+
+            <h3>Proveu</h3>
+
+            <p>
+              Observeu què passa i registreu els resultats.
+            </p>
+
+          </article>
+
+          <article>
+
+            <span>5</span>
+
+            <h3>Milloreu</h3>
+
+            <p>
+              Modifiqueu el disseny a partir de les evidències.
+            </p>
+
+          </article>
+
         </div>
 
-        <div class="checklist-card">
-          <h3>💻 Programació</h3>
-          <label><input type="checkbox" data-check="buttonStarts"> El botó del Hub inicia l'acció</label>
-          <label><input type="checkbox" data-check="motorStops"> El motor s'atura al punt previst</label>
-          <label><input type="checkbox" data-check="returnPosition"> El mecanisme pot tornar a la posició inicial</label>
-        </div>
+
+        <button
+          type="button"
+          class="next-step"
+          data-next="2"
+        >
+          Comencem a descobrir →
+        </button>
+
       </div>
 
-      <div class="build-notes">
-        <label>
-          Quin és el vostre primer disseny?
-          <textarea id="firstDesignNotes" placeholder="Descriviu breument com heu resolt el mecanisme..."></textarea>
-        </label>
-      </div>
-
-      <div class="step-actions">
-        <button class="secondary prev-step">← Enrere</button>
-        <button class="primary next-step">El prototip està preparat →</button>
-      </div>
     </section>
 
-    <!-- 7. PROVES -->
-    <section class="step" data-step="7">
-      <p class="eyebrow">FASE 6 · PROVEM I MILLOREM</p>
-      <h2>Registre d'experiments</h2>
-      <p class="intro">No feu canvis a l'atzar. Anoteu què modifiqueu i què observeu.</p>
 
-      <form id="experimentForm" class="form-card compact">
-        <div class="form-grid">
-          <label>
-            Hipòtesi investigada
-            <select id="experimentHypothesis"></select>
-          </label>
-          <label>
-            Número de prova
-            <input id="experimentNumber" type="number" min="1" value="1" required>
-          </label>
-        </div>
+    <!-- =====================================================
+         PAS 2 · TEORIA
+    ====================================================== -->
 
-        <label>
-          Què heu modificat?
-          <input id="modification" required placeholder="Ex.: Hem allargat el braç amb dues peces">
-        </label>
+    <section
+      class="step"
+      data-step="2"
+    >
 
-        <div class="form-grid metrics">
-          <label>
-            Distància (cm)
-            <input id="distance" type="number" min="0" step="0.1">
-          </label>
-          <label>
-            Error de precisió (cm)
-            <input id="accuracy" type="number" min="0" step="0.1">
-          </label>
-          <label>
-            Estabilitat
-            <select id="stability">
-              <option value="">Seleccioneu...</option>
-              <option>Bona</option>
-              <option>Regular</option>
-              <option>Dolenta</option>
-            </select>
-          </label>
+      <div class="content-card">
+
+        <div class="section-heading">
+
+          <span class="step-number">2</span>
+
+          <div>
+
+            <h2>Com funciona una catapulta?</h2>
+
+            <p>
+              Identifiqueu les parts i el recorregut del moviment.
+            </p>
+
+          </div>
+
         </div>
 
-        <label>
-          Què heu observat?
-          <textarea id="observations" required placeholder="Descriviu què ha passat i si el resultat coincideix amb la vostra predicció."></textarea>
-        </label>
 
-        <button class="primary" type="submit">+ Guardar prova</button>
-      </form>
+        <div class="theory-grid">
 
-      <div id="experimentsList" class="experiments-list"></div>
+          <article class="theory-card">
 
-      <div class="step-actions">
-        <button class="secondary prev-step">← Enrere</button>
-        <button class="primary next-step">Ja tenim prou dades →</button>
+            <h3>Base</h3>
+
+            <p>
+              Manté tota l'estructura estable mentre el mecanisme es mou.
+            </p>
+
+          </article>
+
+
+          <article class="theory-card">
+
+            <h3>Braç</h3>
+
+            <p>
+              És la peça que es mou i transmet el moviment al projectil.
+            </p>
+
+          </article>
+
+
+          <article class="theory-card">
+
+            <h3>Fulcre</h3>
+
+            <p>
+              És el punt al voltant del qual gira el braç.
+            </p>
+
+          </article>
+
+
+          <article class="theory-card">
+
+            <h3>Motor</h3>
+
+            <p>
+              Proporciona el moviment necessari per accionar el mecanisme.
+            </p>
+
+          </article>
+
+
+          <article class="theory-card">
+
+            <h3>Transmissió</h3>
+
+            <p>
+              Connecta el moviment del motor amb la catapulta.
+            </p>
+
+          </article>
+
+
+          <article class="theory-card">
+
+            <h3>Projectil</h3>
+
+            <p>
+              És l'objecte que surt impulsat quan es produeix el moviment.
+            </p>
+
+          </article>
+
+        </div>
+
+
+        <div class="system-flow">
+
+          <h3>Quin és el recorregut del sistema?</h3>
+
+          <p>
+            <strong>
+              Botó del Hub → Programa → Motor → Mecanisme →
+              Braç → Projectil
+            </strong>
+          </p>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="next-step"
+          data-next="3"
+        >
+          Fer el qüestionari →
+        </button>
+
       </div>
+
     </section>
 
-    <!-- 8. VALIDEM -->
-    <section class="step" data-step="8">
-      <p class="eyebrow">FASE 7 · VALIDEM</p>
-      <h2>Compareu les prediccions amb els resultats</h2>
-      <div id="validationContainer"></div>
 
-      <div class="step-actions">
-        <button class="secondary prev-step">← Enrere</button>
-        <button class="primary" id="saveValidationBtn">Guardar validacions →</button>
+    <!-- =====================================================
+         PAS 3 · QÜESTIONARI
+    ====================================================== -->
+
+    <section
+      class="step"
+      data-step="3"
+    >
+
+      <div class="content-card">
+
+        <div class="section-heading">
+
+          <span class="step-number">3</span>
+
+          <div>
+
+            <h2>Qüestionari inicial</h2>
+
+            <p>
+              Comproveu què sabeu abans de començar a experimentar.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div id="quizContainer"></div>
+
+
+        <button
+          type="button"
+          id="finishQuizBtn"
+          class="primary-button"
+        >
+          Comprovar les respostes
+        </button>
+
+
+        <div
+          id="quizFeedback"
+          class="feedback-box hidden"
+        ></div>
+
       </div>
+
     </section>
 
-    <!-- 9. CONCLUSIONS -->
-    <section class="step" data-step="9">
-      <p class="eyebrow">FASE 8 · CONCLUSIONS</p>
-      <h2>Què heu descobert?</h2>
 
-      <form id="conclusionsForm" class="form-card">
-        <label>
-          Quina modificació ha funcionat millor?
-          <textarea id="bestImprovement" required></textarea>
-        </label>
+    <!-- =====================================================
+         PAS 4 · HIPÒTESIS
+    ====================================================== -->
 
-        <label>
-          Quin ha estat el problema més important?
-          <textarea id="mainProblem" required></textarea>
-        </label>
+    <section
+      class="step"
+      data-step="4"
+    >
 
-        <label>
-          Què heu après sobre el funcionament de la catapulta?
-          <textarea id="mainLearning" required></textarea>
-        </label>
+      <div class="content-card">
 
-        <label>
-          Què investigaríeu o milloraríeu si tinguéssiu més temps?
-          <textarea id="nextStep" required></textarea>
-        </label>
+        <div class="section-heading">
 
-        <button class="primary" type="submit">Finalitzar i veure l'informe →</button>
-      </form>
+          <span class="step-number">4</span>
 
-      <section id="finalReport" class="final-report hidden"></section>
+          <div>
 
-      <div class="report-actions hidden" id="reportActions">
-        <button class="secondary" id="printReportBtn">Imprimir / Desar com a PDF</button>
-        <button class="danger" id="resetWorkBtn">Començar un treball nou</button>
+            <h2>Formuleu hipòtesis</h2>
+
+            <p>
+              Seleccioneu fins a tres variables que vulgueu investigar.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="important-note">
+
+          <strong>Recordeu:</strong>
+
+          <p>
+            Per comprovar una hipòtesi correctament, intenteu
+            modificar una variable cada vegada i observeu
+            les conseqüències.
+          </p>
+
+        </div>
+
+
+        <div id="hypothesesContainer"></div>
+
+
+        <div
+          id="predictionForms"
+          class="prediction-forms"
+        ></div>
+
+
+        <button
+          type="button"
+          id="saveHypothesesBtn"
+          class="primary-button"
+        >
+          Guardar les hipòtesis i continuar
+        </button>
+
       </div>
+
     </section>
+
+
+    <!-- =====================================================
+         PAS 5 · CONSTRUCCIÓ
+    ====================================================== -->
+
+    <section
+      class="step"
+      data-step="5"
+    >
+
+      <div class="content-card">
+
+        <div class="section-heading">
+
+          <span class="step-number">5</span>
+
+          <div>
+
+            <h2>Construïu i programeu</h2>
+
+            <p>
+              Creeu el primer prototip abans de començar les proves.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="construction-checklist">
+
+          <label>
+
+            <input
+              type="checkbox"
+              data-construction="base"
+            >
+
+            <span>
+              Hem construït una base estable.
+            </span>
+
+          </label>
+
+
+          <label>
+
+            <input
+              type="checkbox"
+              data-construction="arm"
+            >
+
+            <span>
+              Hem construït un braç que es pot moure correctament.
+            </span>
+
+          </label>
+
+
+          <label>
+
+            <input
+              type="checkbox"
+              data-construction="motor"
+            >
+
+            <span>
+              Hem connectat el motor al mecanisme.
+            </span>
+
+          </label>
+
+
+          <label>
+
+            <input
+              type="checkbox"
+              data-construction="hub"
+            >
+
+            <span>
+              El Hub està connectat i preparat.
+            </span>
+
+          </label>
+
+
+          <label>
+
+            <input
+              type="checkbox"
+              data-construction="program"
+            >
+
+            <span>
+              Hem creat un programa per accionar el motor.
+            </span>
+
+          </label>
+
+
+          <label>
+
+            <input
+              type="checkbox"
+              data-construction="button"
+            >
+
+            <span>
+              El mecanisme s'activa en prémer un botó del Hub.
+            </span>
+
+          </label>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="constructionNotes">
+            Notes sobre el primer prototip
+          </label>
+
+          <textarea
+            id="constructionNotes"
+            rows="5"
+            placeholder="Expliqueu com heu construït el mecanisme i quines decisions heu pres..."
+          ></textarea>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="next-step"
+          data-next="6"
+        >
+          Comencem les proves →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAS 6 · EXPERIMENTACIÓ
+    ====================================================== -->
+
+    <section
+      class="step"
+      data-step="6"
+    >
+
+      <div class="content-card">
+
+        <div class="section-heading">
+
+          <span class="step-number">6</span>
+
+          <div>
+
+            <h2>Provem i registrem</h2>
+
+            <p>
+              Cada prova us proporciona informació per prendre decisions.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <form id="experimentForm">
+
+          <div class="form-row">
+
+            <div class="form-group">
+
+              <label for="experimentNumber">
+                Número de prova
+              </label>
+
+              <input
+                type="number"
+                id="experimentNumber"
+                min="1"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="experimentResult">
+                Resultat
+              </label>
+
+              <input
+                type="number"
+                id="experimentResult"
+                step="0.1"
+                required
+                placeholder="cm"
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="experimentChange">
+              Què heu modificat?
+            </label>
+
+            <textarea
+              id="experimentChange"
+              rows="3"
+              required
+            ></textarea>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="experimentObservation">
+              Què heu observat?
+            </label>
+
+            <textarea
+              id="experimentObservation"
+              rows="4"
+              required
+            ></textarea>
+
+          </div>
+
+
+          <div
+            id="experimentHypotheses"
+            class="experiment-hypotheses"
+          ></div>
+
+
+          <button
+            type="submit"
+            class="primary-button"
+          >
+            Registrar la prova
+          </button>
+
+        </form>
+
+
+        <div
+          id="experimentsList"
+          class="experiments-list"
+        ></div>
+
+
+        <button
+          type="button"
+          class="next-step"
+          data-next="7"
+        >
+          Validar les hipòtesis →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAS 7 · VALIDACIÓ
+    ====================================================== -->
+
+    <section
+      class="step"
+      data-step="7"
+    >
+
+      <div class="content-card">
+
+        <div class="section-heading">
+
+          <span class="step-number">7</span>
+
+          <div>
+
+            <h2>Validem les hipòtesis</h2>
+
+            <p>
+              Compareu les vostres prediccions amb les evidències.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div id="validationContainer"></div>
+
+
+        <button
+          type="button"
+          id="saveValidationBtn"
+          class="primary-button"
+        >
+          Guardar la validació
+        </button>
+
+
+        <button
+          type="button"
+          class="next-step"
+          data-next="8"
+        >
+          Escriure conclusions →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAS 8 · CONCLUSIONS
+    ====================================================== -->
+
+    <section
+      class="step"
+      data-step="8"
+    >
+
+      <div class="content-card">
+
+        <div class="section-heading">
+
+          <span class="step-number">8</span>
+
+          <div>
+
+            <h2>Conclusions</h2>
+
+            <p>
+              Expliqueu què heu descobert durant el procés.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="bestImprovement">
+            Quina millora ha funcionat millor?
+          </label>
+
+          <textarea
+            id="bestImprovement"
+            rows="4"
+          ></textarea>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="mainProblem">
+            Quin ha estat el principal problema?
+          </label>
+
+          <textarea
+            id="mainProblem"
+            rows="4"
+          ></textarea>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="mainLearning">
+            Què heu après?
+          </label>
+
+          <textarea
+            id="mainLearning"
+            rows="4"
+          ></textarea>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="nextStep">
+            Si tinguéssiu més temps, què faríeu després?
+          </label>
+
+          <textarea
+            id="nextStep"
+            rows="4"
+          ></textarea>
+
+        </div>
+
+
+        <button
+          type="button"
+          id="finishActivityBtn"
+          class="primary-button large-button"
+        >
+          Finalitzar i generar l'informe
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INFORME FINAL
+    ====================================================== -->
+
+    <section
+      id="reportSection"
+      class="report-section hidden"
+    >
+
+      <div class="content-card">
+
+        <h2>Informe del treball</h2>
+
+        <div id="reportContent"></div>
+
+
+        <div
+          id="reportActions"
+          class="report-actions hidden"
+        >
+
+          <button
+            type="button"
+            id="printReportBtn"
+            class="primary-button"
+          >
+            Imprimir o desar com a PDF
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ESTAT DEL DESAMENT
+    ====================================================== -->
+
+    <div
+      id="saveStatus"
+      class="save-status"
+      aria-live="polite"
+    >
+      Preparat
+    </div>
+
   </main>
 
+
+  <!-- =====================================================
+       PEU
+  ====================================================== -->
+
   <footer>
-    <p>Construïm catapultes amb LEGO · Taller STEAM · Primera versió MVP</p>
+
+    <p>
+      Activitat STEAM · Construcció i experimentació amb LEGO SPIKE
+    </p>
+
   </footer>
 
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
   <script src="script.js"></script>
+
+
+  <!-- =====================================================
+       RECUPERACIÓ DES DEL NÚVOL
+
+       Aquest codi crida la nova funció:
+       recoverWork(workId)
+
+       La funció principal es troba a script.js.
+  ====================================================== -->
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const loadCloudBtn =
+        document.getElementById("loadCloudBtn");
+
+      if (loadCloudBtn) {
+
+        loadCloudBtn.addEventListener(
+          "click",
+          async () => {
+
+            const input =
+              document.getElementById("workIdInput");
+
+            const workId =
+              input.value.trim().toUpperCase();
+
+            if (!workId) {
+
+              alert(
+                "Introduïu el codi del treball."
+              );
+
+              return;
+
+            }
+
+
+            try {
+
+              loadCloudBtn.disabled = true;
+
+              loadCloudBtn.textContent =
+                "Recuperant...";
+
+              await recoverWork(workId);
+
+
+              // Actualitzem el codi visible
+
+              const display =
+                document.getElementById("workIdDisplay");
+
+              if (display && typeof state !== "undefined") {
+
+                display.textContent =
+                  state.workId || workId;
+
+              }
+
+
+              // Amaguem la pantalla inicial
+
+              document
+                .getElementById("startScreen")
+                .classList.add("hidden");
+
+
+              // Mostrem el treball recuperat
+
+              if (
+                typeof state !== "undefined" &&
+                typeof showStep === "function"
+              ) {
+
+                showStep(
+                  state.currentStep || 1
+                );
+
+              }
+
+
+            } catch (error) {
+
+              console.error(
+                "Error recuperant el treball:",
+                error
+              );
+
+              alert(
+                "No s'ha pogut recuperar el treball.\n\n" +
+                error.message
+              );
+
+            } finally {
+
+              loadCloudBtn.disabled = false;
+
+              loadCloudBtn.textContent =
+                "Recuperar del núvol";
+
+            }
+
+          }
+        );
+
+      }
+
+    });
+
+  </script>
+
 </body>
+
 </html>
